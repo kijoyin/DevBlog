@@ -1,0 +1,28 @@
+﻿<div class="row">
+    @if (PostSummaries is null)
+    {
+        <div>I am not ready</div>
+    }
+    else
+    {
+        foreach (var t in PostSummaries)
+        {
+            <div class="col-@colValue content">
+                <PostCard PostCardModel="t"></PostCard>
+            </div>
+        }
+    }
+
+</div>
+
+@code {
+    private int colValue = 4;
+    [Parameter]
+    public IEnumerable<PostCardModel> PostSummaries { get; set; }
+    [Parameter]
+    public int Columns { get; set; }
+    protected override void OnInitialized()
+    {
+        colValue = 12 / Columns;
+    }
+}

@@ -1,51 +1,17 @@
 ﻿@page "/"
 
 <PageTitle>Home</PageTitle>
-<div class="row">
-    <div class="col-3">
-        <Card>
-            <img class="rounded-top" src="https://placehold.co/600x400" alt="placeholder" />
-            <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubTitle Class="mb-2 text-muted">Card subtitle</CardSubTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button Color="ButtonColor.Primary" To="#" Type="ButtonType.Link">Go somewhere</Button>
-            </CardBody>
-        </Card>
-    </div>
-    <div class="col-3">
-        <Card>
-            <img class="rounded-top" src="https://placehold.co/600x400" alt="placeholder" />
-            <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubTitle Class="mb-2 text-muted">Card subtitle</CardSubTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button Color="ButtonColor.Primary" To="#" Type="ButtonType.Link">Go somewhere</Button>
-            </CardBody>
-        </Card>
-    </div>
-    <div class="col-3">
-        <Card>
-            <img class="rounded-top" src="https://placehold.co/600x400" alt="placeholder" />
-            <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubTitle Class="mb-2 text-muted">Card subtitle</CardSubTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button Color="ButtonColor.Primary" To="#" Type="ButtonType.Link">Go somewhere</Button>
-            </CardBody>
-        </Card>
-    </div>
-    <div class="col-3">
-        <Card>
-            <img class="rounded-top" src="https://placehold.co/600x400" alt="placeholder" />
-            <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubTitle Class="mb-2 text-muted">Card subtitle</CardSubTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button Color="ButtonColor.Primary" To="#" Type="ButtonType.Link">Go somewhere</Button>
-            </CardBody>
-        </Card>
-    </div>
-</div>
+<PostList PostSummaries="postSummaries" Columns="4"></PostList>
 
 
+@code{
+    private IList<PostCardModel> postSummaries = new List<PostCardModel>();
+    protected override void OnInitialized()
+    {
+        for(var i =0;i<10;i++)
+        {
+            var model =new PostCardModel($"Blog no {i+1}", "Is it any good??", "Some quick example text to build on the card title and make up the bulk of the card's content.", "a/b/c"); ;
+            postSummaries.Add(model);
+        }
+    }
+}

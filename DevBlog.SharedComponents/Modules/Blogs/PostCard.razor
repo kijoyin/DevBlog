@@ -1,0 +1,14 @@
+﻿<Card>
+    <img class="rounded-top" src="https://placehold.co/600x400" alt="placeholder" />
+    <CardBody>
+        <CardTitle>@PostCardModel.Title</CardTitle>
+        <CardSubTitle Class="mb-2 text-muted">@PostCardModel.SubTitle</CardSubTitle>
+        <CardText>@PostCardModel.Summary</CardText>
+        <Button Color="ButtonColor.Primary" To="@PostCardModel.Slug" Type="ButtonType.Link">Go somewhere</Button>
+    </CardBody>
+</Card>
+
+@code {
+    [Parameter]
+    public PostCardModel PostCardModel { get; set; } = new PostCardModel("","","","");
+}

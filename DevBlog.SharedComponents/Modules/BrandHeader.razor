@@ -1,0 +1,13 @@
+﻿<header class="content border-5 border-bottom border-dark">
+    <h1>@Title</h1>
+    <p>
+        @Description
+    </p>
+</header>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "";
+    [Parameter]
+    public string Description { get; set; } = "";
+}
