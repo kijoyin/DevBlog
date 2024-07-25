@@ -1,21 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-DevBlog-52bdaade-e147-42c1-af98-6d97ed02b784</UserSecretsId>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>aspnet-DevBlog-52bdaade-e147-42c1-af98-6d97ed02b784</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DevBlog.Client\DevBlog.Client.csproj" />
-    <ProjectReference Include="..\DevBlog.SharedComponents\DevBlog.SharedComponents.csproj" />
-    <PackageReference Include="Blazor.Bootstrap" Version="3.0.0-preview.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4" />
-  </ItemGroup>
+	<PropertyGroup>
+		<EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+		<WebPublishMethod>Container</WebPublishMethod>
+		<ContainerBaseImage>mcr.microsoft.com/dotnet/runtime:8.0</ContainerBaseImage>
+		<ContainerImageTag>1.0.0</ContainerImageTag>
+		<ContainerRegistry>ghcr.io</ContainerRegistry>
+		<ContainerRepository>kijoyin/devblog</ContainerRepository>
+	</PropertyGroup>
+	<ItemGroup>
+		<ContainerPort Include="80" Type="tcp" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DevBlog.Client\DevBlog.Client.csproj" />
+		<ProjectReference Include="..\DevBlog.SharedComponents\DevBlog.SharedComponents.csproj" />
+		<PackageReference Include="Blazor.Bootstrap" Version="3.0.0-preview.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4" />
+	</ItemGroup>
 
 </Project>
