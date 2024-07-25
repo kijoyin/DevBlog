@@ -5,19 +5,8 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>aspnet-DevBlog-52bdaade-e147-42c1-af98-6d97ed02b784</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	</PropertyGroup>
-
-	<PropertyGroup>
-		<EnableSdkContainerSupport>true</EnableSdkContainerSupport>
-		<WebPublishMethod>Container</WebPublishMethod>
-		<ContainerBaseImage>mcr.microsoft.com/dotnet/runtime:8.0</ContainerBaseImage>
-		<ContainerImageTag>1.0.0</ContainerImageTag>
-		<ContainerRegistry>ghcr.io</ContainerRegistry>
-		<ContainerRepository>kijoyin/devblog</ContainerRepository>
-	</PropertyGroup>
-	<ItemGroup>
-		<ContainerPort Include="80" Type="tcp" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\DevBlog.Client\DevBlog.Client.csproj" />
@@ -28,6 +17,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
 	</ItemGroup>
 
 </Project>
